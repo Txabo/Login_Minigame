@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Locale;
 import java.util.Map;
@@ -27,9 +28,15 @@ public class LoginActivity extends AppCompatActivity {
         confirmButton = findViewById(R.id.confirmButton2);
         confirmButton.setOnClickListener(view -> {
             boolean validLogin = userExists(mailEditText.getText().toString(), passEditText.getText().toString());
+            String user = mailEditText.getText().toString().substring(0, mailEditText.getText().toString().indexOf("@"));
 
-            if(validLogin)
-                startActivity(new Intent(this, GameActivity.class));
+            if(validLogin) {
+                Intent intent = new Intent(this, GameActivity.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
+                finish();
+            }else
+                Toast.makeText(this , getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
         });
 
         backButton = findViewById(R.id.back_button2);
@@ -48,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
 
             Map<String, ?> allEntries = pref.getAll();
             for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
-                System.out.println(entry.getValue().toString());
                 if (!entry.getValue().toString().equals(password)) return false;
             }
         } catch (Exception e) {

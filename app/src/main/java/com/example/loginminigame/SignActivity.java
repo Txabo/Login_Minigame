@@ -39,6 +39,7 @@ public class SignActivity extends AppCompatActivity {
             if(access) {
                 saveUser(mailEditText.getText().toString(), passEditText.getText().toString());
                 startActivity(new Intent(SignActivity.this, LoginActivity.class));
+                finish();
             } else
                 Toast.makeText(this , getString(R.string.login_failed), Toast.LENGTH_SHORT).show();
         });

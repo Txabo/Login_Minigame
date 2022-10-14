@@ -12,4 +12,8 @@
     <string name="login_failed">Error en el inicio de sesión</string>
     <string name="confirm">Confirmar</string>
     <string name="back">Volver</string>
+    <string name="hello">Hola</string>
+    <string name="spin">Girar la rueda</string>
+    <string name="stop">Dejar de girar</string>
+    <string name="die_date">Vas a morir en </string>
 </resources>

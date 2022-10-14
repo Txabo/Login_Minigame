@@ -12,4 +12,8 @@
     <string name="login_failed">"Login failed"</string>
     <string name="confirm">Confirm</string>
     <string name="back">Back</string>
+    <string name="hello">Hello</string>
+    <string name="spin">Spin the Wheel</string>
+    <string name="stop">Stop spinning</string>
+    <string name="die_date">U are gonna die in </string>
 </resources>
